@@ -1,0 +1,1 @@
+curl -s https://raw.githubusercontent.com/Ironbill25/RSBUbash/refs/heads/main/rsbubash -o ~/.rsbubash && echo -e "\n# Include RSBUbash\nif [ -f \"\$HOME/.rsbubash\" ]; then . \"\$HOME/.rsbubash\"; fi" >> ~/.bashrc && source ~/.bashrc

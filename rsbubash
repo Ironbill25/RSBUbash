@@ -1,0 +1,22 @@
+#!/bin/bash
+
+alias please='sudo $(fc -ln -1)'
+alias dfh='df -h -x tmpfs -x devtmpfs -x squashfs'
+alias viewpath='echo -e "${PATH//:/\\n}"'
+alias cls='clear && printf "\e[3J"'
+alias myip='curl ifconfig.me/ip'
+
+mkdirp() { mkdir -p "$1" && cd "$1"; }
+
+
+update_rsbubash() {
+  if curl -s "https://raw.githubusercontent.com/Ironbill25/RSBUbash/refs/heads/main/rsbubash" -o ~/.rsbubash.tmp; then
+    mv ~/.rsbubash.tmp ~/.rsbubash
+    echo "Success"
+    . ~/.rsbubash
+  else
+    echo "Update failed, are you connected to the internet?"
+    rm -f ~/.rsbubash.tmp
+    return 1
+  fi
+}
